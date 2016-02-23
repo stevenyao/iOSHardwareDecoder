@@ -189,6 +189,7 @@ static void didDecompress( void *decompressionOutputRefCon, void *sourceFrameRef
         
         NSLog(@"Read Nalu size %ld", vp.size);
     }
+    [parser close];
 }
 
 -(IBAction)on_playButton_clicked:(id)sender {
