@@ -141,7 +141,7 @@ static const GLfloat kColorConversion709[] = {
      */
     CFTypeRef colorAttachments = CVBufferGetAttachment(pixelBuffer, kCVImageBufferYCbCrMatrixKey, NULL);
     
-    if (colorAttachments == kCVImageBufferYCbCrMatrix_ITU_R_601_4) {
+    if (CFStringCompare(colorAttachments, kCVImageBufferYCbCrMatrix_ITU_R_601_4, 0) == kCFCompareEqualTo) {
         _preferredConversion = kColorConversion601;
     }
     else {
